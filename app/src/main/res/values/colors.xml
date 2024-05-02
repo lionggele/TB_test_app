@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <color name="primary_color">#0E353B</color>
+    <color name="secondary_color">#238D9E</color>
+    <color name="tertiary_color">#C2E8EE</color>
+    <color name="forth_color">#D7FAFF</color>
+    <color name="light_purple">#E9E3F8</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="light_grey">#D0D0D0</color>
+    <color name="almost_black">#424242</color>
+    <color name="abit_grey">#787878</color>
+    <color name="grey_inactive">#6E6F72</color>
+    <color name="lighter_grey">#F5F5F7</color>
+    <color name="red">#D97C7C</color>
+    <color name="green">#8ACF82</color>
+</resources>

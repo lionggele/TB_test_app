@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/dialog_background"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/dialogImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:src="@drawable/clearskin" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Make sure your image is clear and well-lit. Here is an example of a good image for analysis:" />
+
+    <Button
+        android:id="@+id/dialogButtonGotIt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="Got it!"
+        android:background="@drawable/buttonlongcard_bg"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp" />
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="0dp"
+    android:paddingHorizontal="0dp"
+    android:padding="16dp"
+    tools:ignore="ExtraText">
+
+    <!-- layout for Tubeculosis information, TST, Treatment and FAQ -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/arrow_left"
+        android:contentDescription="back"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="16dp" />
+    <TextView
+        android:id="@+id/Questionaire_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:font="@font/nunitobold"
+        android:fontFamily="@font/nunitobold"
+        android:text="Tuberculosis info"
+        android:textAlignment="center"
+        android:textColor="@color/secondary_color"
+        android:textSize="25sp"
+        android:typeface="normal"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_below="@id/Questionaire_title" />
+
+
+
+</RelativeLayout>

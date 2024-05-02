@@ -1,96 +1,37 @@
-<!--
-   Copyright 2016 Google Inc.
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-
-   Frame
--->
-<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.google.ar.core.codelab.depth.DepthCodelabActivity">
+    tools:context=".DepthCodelabActivity">
 
-  <android.opengl.GLSurfaceView
-      android:id="@+id/surfaceview"
-      android:layout_width="match_parent"
-      android:layout_height="fill_parent"
-      android:layout_gravity="top" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-  <Button
-      android:id="@+id/toggle_depth_button"
-      android:layout_width="125dp"
-      android:layout_height="58dp"
-      android:layout_marginStart="270dp"
-      android:layout_marginTop="20dp"
-      android:layout_marginEnd="20dp"
-      android:layout_marginBottom="20dp"
-      android:gravity="center"
-      android:text="@string/show_depth" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitoblack"
+            android:text="TB"
+            android:textColor="@color/secondary_color"
+            android:textSize="48sp"
+            tools:ignore="HardcodedText" />
 
-  <TextView
-      android:id="@+id/distance_TextView"
-      android:layout_width="239dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="20dp"
-      android:layout_marginTop="20dp"
-      android:layout_marginBottom="20dp"
-      android:text="@string/depth"
-      android:textColor="#E0E0E0"
-      android:textSize="60sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosemibold"
+            android:text="Check"
+            android:textSize="48sp"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
 
-  <TextView
-      android:id="@+id/orientation_TextView"
-      android:layout_width="239dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="20dp"
-      android:layout_marginTop="100dp"
-      android:layout_marginBottom="20dp"
-      android:text="@string/depth"
-      android:textColor="#E0E0E0"
-      android:textSize="60sp" />
-
-  <TextView
-      android:id="@+id/orientation2_TextView"
-      android:layout_width="239dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="20dp"
-      android:layout_marginTop="185dp"
-      android:layout_marginBottom="20dp"
-      android:text="@string/depth"
-      android:textColor="#E0E0E0"
-      android:textSize="60sp" />
-
-
-  <Button
-      android:id="@+id/fboRecord_button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignStart="@+id/surfaceview"
-      android:layout_alignTop="@+id/surfaceview"
-      android:layout_marginStart="300dp"
-      android:layout_marginTop="650dp"
-      android:onClick="onSavePicture"
-      android:text="Snap"
-      tools:ignore="OnClick" />
-
-  <Button
-      android:id="@+id/next"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignStart="@+id/surfaceview"
-      android:layout_alignTop="@+id/surfaceview"
-      android:layout_marginStart="300dp"
-      android:layout_marginTop="600dp"
-      android:text="Next"/>
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Preview Frame where camera preview or image will be displayed -->
+
+    <!-- Bottom Panel for displaying controls and outputs -->
+
+    <ImageView
+        android:id="@+id/captured_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_panel"
+        android:layout_marginBottom="7dp"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription">
+    </ImageView>
+
+    <LinearLayout
+        android:id="@+id/bottom_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Button for starting detection -->
+        <Button
+            android:id="@+id/btn_detect1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detect Objects" />
+
+        <!-- TextView for displaying detection results -->
+        <TextView
+            android:id="@+id/tv_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="Detection Results"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:padding="16dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

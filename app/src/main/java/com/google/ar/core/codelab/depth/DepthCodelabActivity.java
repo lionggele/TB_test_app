@@ -58,7 +58,6 @@ import com.google.ar.core.codelab.common.rendering.CenterOrientationRenderer;
 import com.google.ar.core.codelab.common.rendering.CircleOrientationRenderer;
 import com.google.ar.core.codelab.common.rendering.ObjectRenderer;
 import com.google.ar.core.codelab.common.rendering.OcclusionObjectRenderer;
-import com.google.ar.core.codelab.imagecapture.ImageCaptureActivity;
 import com.google.ar.core.codelab.orientation.OrientationHandler;
 import com.google.ar.core.exceptions.CameraNotAvailableException;
 import com.google.ar.core.exceptions.UnavailableApkTooOldException;
@@ -75,11 +74,6 @@ import java.util.ArrayList;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-
-/**
- * This is a simple example that shows how to create an augmented reality (AR) application using the
- * ARCore API. The application will allow the user to tap to place a 3d model of the Android robot.
- */
 public class DepthCodelabActivity extends AppCompatActivity implements GLSurfaceView.Renderer , SensorEventListener{
   private static final String TAG = DepthCodelabActivity.class.getSimpleName();
 
@@ -106,8 +100,8 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
   // Temporary matrix allocated here to reduce number of allocations for each frame.
   private final float[] anchorMatrix = new float[16];
 
-  private static final String SEARCHING_PLANE_MESSAGE = "Please move around slowly...";
-  private static final String PLANES_FOUND_MESSAGE = "Tap to place objects.";
+  private static final String SEARCHING_PLANE_MESSAGE = "Please move around slowly... Finding the Plane";
+  private static final String PLANES_FOUND_MESSAGE = "Plane is found";
   private static final String DEPTH_NOT_AVAILABLE_MESSAGE = "[Depth not supported on this device]";
 
   // Anchors created from taps used for object placing with a given color.
@@ -133,7 +127,7 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_contour_tracking);
     surfaceView = findViewById(R.id.surfaceview);
     // display the value of between the depth image and camera
     distance_TextView = findViewById(R.id.distance_TextView);
@@ -185,11 +179,11 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
         });
 
 
-    mButton = findViewById(R.id.next);
-    mButton.setOnClickListener(view -> {
-      Intent secondActivityIntent = new Intent(DepthCodelabActivity.this, ImageCaptureActivity.class);
-      startActivity(secondActivityIntent);
-    });
+//    mButton = findViewById(R.id.next);
+//    mButton.setOnClickListener(view -> {
+//      Intent secondActivityIntent = new Intent(DepthCodelabActivity.this, ImageCaptureActivity.class);
+//      startActivity(secondActivityIntent);
+//    });
   }
 
   @Override
@@ -288,9 +282,10 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
   }
   @Override
   public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] results) {
+    super.onRequestPermissionsResult(requestCode, permissions, results);
     if (!CameraPermissionHelper.hasCameraPermission(this)) {
       Toast.makeText(this, "Camera permission is needed to run this application",
-          Toast.LENGTH_LONG).show();
+              Toast.LENGTH_LONG).show();
       if (!CameraPermissionHelper.shouldShowRequestPermissionRationale(this)) {
         // Permission denied with checking "Do not ask again".
         CameraPermissionHelper.launchPermissionSettings(this);
@@ -407,7 +402,6 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
         SavePicture();
       }
 
-
       // If not tracking, don't draw 3D objects, show tracking failure reason instead.
       if (camera.getTrackingState() == TrackingState.PAUSED) {
         messageSnackbarHelper.showMessage(
@@ -473,7 +467,7 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
 
       }
 
-      if (depthTexture.getDepthValue() >= 701) {
+      if (depthTexture.getDepthValue() >= 401) {
         // above 701, ratio will increase by 1 every 74 mm
         int r = Math.min(15, Math.max(10, Math.round(depthTexture.getDepthValue() / 74)));//74.2
         centerOrientationRenderer.updateCircleSize(r);
@@ -486,7 +480,7 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
 
 
       // Format the depth value as a string.
-      String distanceText = String.format("%d", depthTexture.getDepthValue());
+      String distanceText = String.format("%d", depthTexture.getDepthValue()-50);
 
       // Display the distance text in a TextView.
       distance_TextView.setText(distanceText);
@@ -502,8 +496,8 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
 
       // Display the orientation text in a TextView.
       orientation2_TextView.setText(orientation2);
-
-      if (depthTexture.getDepthValue() <= 700 && orientationHandler.getdegree() == 0f &&  orientationHandler.getDegree2() == 0f){
+    //&& depthTexture.getDepthValue() >= 215
+      if (depthTexture.getDepthValue() <= 271 && depthTexture.getDepthValue() >= 269  && orientationHandler.getdegree() == 0f &&  orientationHandler.getDegree2() == 0f){
         try {
           Intent secondActivityIntent = new Intent(DepthCodelabActivity.this, ImageCaptureActivity.class);
           startActivity(secondActivityIntent);
@@ -551,12 +545,6 @@ public class DepthCodelabActivity extends AppCompatActivity implements GLSurface
     return false;
   }
 
-  public void onSavePicture(View view) {
-    // Here just a set a flag so we can copy
-    // the image from the onDrawFrame() method.
-    // This is required for OpenGL so we are on the rendering thread.
-    this.capturePicture = true;
-  }
 
   /**
    * Call from the GLThread to save a picture of the current frame.

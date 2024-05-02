@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/Registerheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunitosemibold"
+        android:text="@string/register"
+        android:textColor="@color/almost_black"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backbutton" />
+
+    <TextView
+        android:id="@+id/registerdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunitosemibold"
+        android:text="Fill up the necessary details"
+        android:textColor="@color/abit_grey"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Registerheading" />
+
+    <EditText
+        android:id="@+id/firstname"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Email"
+        android:background="@drawable/textfield"
+        android:fontFamily="@font/nunitosemibold"
+        android:hint="First Name"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:selectAllOnFocus="true"
+        android:textColorHint="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerdescription" />
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="Email"
+        android:background="@drawable/textfield"
+        android:fontFamily="@font/nunitosemibold"
+        android:hint="Last Name"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:selectAllOnFocus="true"
+        android:textColorHint="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstname" />
+
+    <EditText
+        android:id="@+id/phonenumber"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="Email"
+        android:background="@drawable/textfield"
+        android:fontFamily="@font/nunitosemibold"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:selectAllOnFocus="true"
+        android:textColorHint="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastname" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="Email"
+        android:background="@drawable/textfield"
+        android:fontFamily="@font/nunitosemibold"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:selectAllOnFocus="true"
+        android:textColorHint="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phonenumber" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="Email"
+        android:background="@drawable/textfield"
+        android:fontFamily="@font/nunitosemibold"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:selectAllOnFocus="true"
+        android:textColorHint="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <CheckBox
+        android:id="@+id/showHidePW"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="20dp"
+        android:button="@drawable/show_password_selector"
+        android:buttonTint="@color/grey_inactive"
+        android:fontFamily="@font/nunitosemibold"
+        android:textColorHint="@color/light_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintTop_toTopOf="@+id/password" />
+
+    <Button
+        android:id="@+id/registerbuttonsubmit"
+        android:layout_width="352dp"
+        android:layout_height="76dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="12dp"
+        android:enabled="false"
+        android:fontFamily="@font/nunitosemibold"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_filled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+
+    <Button
+        android:id="@+id/registerbutton"
+        android:layout_width="352dp"
+        android:layout_height="76dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/button_filled"
+        android:fontFamily="@font/nunitosemibold"
+        android:text="@string/register"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        />
+
+
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/arrow_left"
+        android:contentDescription="Back Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

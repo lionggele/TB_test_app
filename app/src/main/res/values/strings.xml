@@ -14,7 +14,7 @@
    limitations under the License.
 -->
 <resources>
-    <string name="app_name">Depth Codelab</string>
+    <string name="app_name">TBCheck</string>
     <string name="show_depth" translatable="false">Show Depth</string>
     <string name="hide_depth" translatable="false">Hide Depth</string>
     <string name="depth_not_available" translatable="false">Depth Not Available</string>
@@ -22,4 +22,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="kacha">kacha</string>
+    <string name="action_login">Sign in</string>
+    <string name="register">Register</string>
+    <string name="id">ID</string>
+    <string name="email">lionggele40@gmail.com</string>
+    <string name="ic_passport_title">IC/Passport No.</string>
+    <string name="ic_passport">020517xxxxxxx</string>
+    <string name="nationality_title">Nationality</string>
+    <string name="nationality">Malaysian</string>
+    <string name="home">Home</string>
+    <string name="camera">Camera</string>
+    <string name="information">Information</string>
+    <string name="tuberculosis">Tuberculosis</string>
+    <string name="page_description">Page Description</string>
+    <string name="channel_name">Reminder Notifications</string>
+    <string name="channel_description">Notifications for reminders set within the app.</string>
 </resources>

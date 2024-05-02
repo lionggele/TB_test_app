@@ -1,18 +1,3 @@
-<!--
-   Copyright 2016 Google Inc.
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
 <resources>
 
   <!--
@@ -28,8 +13,23 @@
   </style>
 
   <!-- Application theme. -->
-  <style name="AppTheme" parent="AppBaseTheme">
-    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-  </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+      <!-- Primary brand color. -->
+      <item name="colorPrimary">@color/primary_color</item>
+      <item name="colorOnPrimary">@color/white</item>
+
+
+      <!-- Secondary brand color. -->
+      <item name="colorSecondary">@color/secondary_color</item>
+      <item name="colorSecondaryVariant">@color/secondary_color</item>
+      <item name="colorOnSecondary">@color/white</item>
+
+      <!-- Status bar color. -->
+      <item name="android:statusBarColor">@color/white</item>
+      <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+
 
 </resources>

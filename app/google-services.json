@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "609360868297",
+    "project_id": "tuberculosis-f1536",
+    "storage_bucket": "tuberculosis-f1536.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609360868297:android:884ddf54a352b76b552e18",
+        "android_client_info": {
+          "package_name": "com.google.ar.core.codelab.depth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjjHM_E5VbH9g8L6YduDFy8r07g7PYEt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
