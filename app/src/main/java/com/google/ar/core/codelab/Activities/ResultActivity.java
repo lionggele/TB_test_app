@@ -404,9 +404,9 @@ public class ResultActivity extends AppCompatActivity {
         } else if (maxDiameter >= 50 && maxDiameter < 80) {
             return 0.1523; //0.1493;  // Conversion factor for 50 < maxDiameter < 60
         } else if (maxDiameter >= 80 && maxDiameter < 200) {
-            return 0.1499; //0.1234;
+            return 0.1599; //0.1234;
         } else{
-            return 0.1332;
+            return 0.1499;
         }
 
 //        } else{
